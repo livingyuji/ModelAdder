@@ -1,0 +1,31 @@
+name: ModelAdder
+version: '${version}'
+main: com.modeladder.core.ModelAdderPlugin
+api-version: '${apiVersion}'
+description: '${description}'
+author: LivingYuji
+website: https://github.com/LivingYuji/ModelAdder
+
+commands:
+  modeladder:
+    description: Main command for Model Adder custom content and resource packs.
+    aliases: [ma]
+    permission: modeladder.admin
+    usage: /modeladder help
+
+permissions:
+  modeladder.admin:
+    description: Full administrative access to Model Adder.
+    default: op
+  modeladder.reload:
+    description: Permission to reload configurations and content.
+    default: op
+  modeladder.status:
+    description: Permission to view plugin and resource pack status.
+    default: op
+  modeladder.item.give:
+    description: Permission to give custom items.
+    default: op
+  modeladder.pack.build:
+    description: Permission to build resource packs.
+    default: op

@@ -1,0 +1,28 @@
+plugins {
+    id 'com.github.johnrengelman.shadow'
+}
+
+dependencies {
+    api project(':model-adder-api')
+    implementation project(':model-adder-pack')
+    implementation project(':model-adder-editor')
+    implementation project(':model-adder-integrations')
+}
+
+processResources {
+    def props = [
+        version: project.version,
+        description: 'Original custom content, models and resource-pack engine for Minecraft',
+        apiVersion: '1.21'
+    ]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}
+
+shadowJar {
+    archiveClassifier.set('')
+    archiveBaseName.set('ModelAdder')
+}

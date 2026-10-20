@@ -1,0 +1,10 @@
+id: "modeladder:oak_chair"
+display: "Oak Chair"
+item: "modeladder:ruby_sword"
+hitbox:
+  width: 0.8
+  height: 0.9
+seating:
+  can-sit: true
+  sit-height-offset: -0.2
+rotation-step: 90

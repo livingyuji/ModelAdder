@@ -1,0 +1,9 @@
+id: "modeladder:ruby_slash"
+display: "Ruby Slash"
+trigger: "RIGHT_CLICK"
+cooldown-seconds: 4.5
+sound: "minecraft:entity.player.attack.sweep"
+particle: "minecraft:flame"
+effects:
+  - "damage:nearby:4:6.0"
+  - "launch:0.8"

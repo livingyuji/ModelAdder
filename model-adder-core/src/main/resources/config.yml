@@ -1,0 +1,33 @@
+# Model Adder Configuration
+# Minecraft Java 1.21.11 Target
+
+resource-pack:
+  hosting:
+    # Mode can be 'built-in' or 'external'
+    mode: built-in
+
+    built-in:
+      enabled: true
+      bind-address: "0.0.0.0"
+      port: 8085
+      public-url: ""
+
+    external:
+      url: ""
+      expected-sha1: ""
+
+  delivery:
+    prompt-on-join: true
+    required: false
+
+  backups:
+    enabled: true
+    max-builds: 10
+
+security:
+  limits:
+    max-archive-mb: 100
+    max-expanded-mb: 250
+    max-entries: 10000
+
+debug: false

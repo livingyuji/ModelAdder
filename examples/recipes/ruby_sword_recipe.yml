@@ -1,0 +1,13 @@
+id: "modeladder:ruby_sword_recipe"
+display: "Ruby Sword Crafting"
+type: "SHAPED"
+result:
+  item: "modeladder:ruby_sword"
+  amount: 1
+shape:
+  - " R "
+  - " R "
+  - " S "
+ingredients:
+  R: "REDSTONE_BLOCK"
+  S: "STICK"

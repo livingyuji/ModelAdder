@@ -1,0 +1,10 @@
+dependencies {
+    testImplementation project(':model-adder-api')
+    testImplementation project(':model-adder-pack')
+    testImplementation project(':model-adder-core')
+    testImplementation project(':model-adder-editor')
+    testImplementation project(':model-adder-integrations')
+    testImplementation "io.papermc.paper:paper-api:${property('paperApiVersion')}"
+    testImplementation 'com.google.code.gson:gson:2.11.0'
+    testImplementation 'org.yaml:snakeyaml:2.2'
+}

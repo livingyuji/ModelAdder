@@ -1,0 +1,8 @@
+rootProject.name = 'ModelAdder'
+
+include 'model-adder-api'
+include 'model-adder-pack'
+include 'model-adder-core'
+include 'model-adder-editor'
+include 'model-adder-integrations'
+include 'model-adder-tests'

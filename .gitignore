@@ -1,0 +1,16 @@
+# Gradle build and cache
+.gradle/
+build/
+**/build/
+!src/**/build/
+
+# IDE and OS files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs and transient runtime data
+*.log
+logs/

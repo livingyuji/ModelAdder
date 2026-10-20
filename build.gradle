@@ -1,0 +1,65 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+}
+
+allprojects {
+    group = 'com.modeladder'
+    version = project.property('pluginVersion')
+
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'papermc-repo'
+            url = 'https://repo.papermc.io/repository/maven-public/'
+        }
+        maven {
+            name = 'sonatype'
+            url = 'https://oss.sonatype.org/content/groups/public/'
+        }
+        maven {
+            name = 'placeholderapi'
+            url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+        }
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(project.property('targetJavaVersion') as int)
+        }
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+        options.release.set(project.property('targetJavaVersion') as int)
+    }
+
+    dependencies {
+        compileOnly "io.papermc.paper:paper-api:${project.property('paperApiVersion')}"
+        compileOnly 'org.jetbrains:annotations:24.1.0'
+        
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    }
+
+    tasks.withType(Test).configureEach {
+        useJUnitPlatform()
+        testLogging {
+            events 'passed', 'skipped', 'failed'
+        }
+    }
+}
+
+gradle.projectsEvaluated {
+    tasks.register('packageRelease', Copy) {
+        dependsOn ':model-adder-core:shadowJar'
+        from project(':model-adder-core').tasks.named('shadowJar')
+        into layout.projectDirectory.dir('release')
+        rename { String fileName -> "ModelAdder-${project.property('minecraftVersion')}.jar" }
+    }
+}

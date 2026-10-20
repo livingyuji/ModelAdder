@@ -1,0 +1,17 @@
+id: "modeladder:ruby_sword"
+display:
+  name: "<red><bold>Ruby Sword</bold></red>"
+  lore:
+    - "<gray>A forged crystal blade of ancient crimson fire."
+    - "<yellow>Ability: <gold>Ruby Slash <gray>(Right-Click)"
+material: "DIAMOND_SWORD"
+model:
+  asset: "modeladder:item/ruby_sword"
+  texture: "modeladder:item/ruby_sword"
+  custom-model-data: 10001
+properties:
+  stack-size: 1
+  durability: 1800
+  unbreakable: false
+abilities:
+  - "modeladder:ruby_slash"
